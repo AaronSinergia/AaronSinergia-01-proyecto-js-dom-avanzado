@@ -159,16 +159,16 @@ body {
 h3 > .mail_link {
   display: flex;
   font-size: 12px;
-  justify-content: center;
   border: 1px solid var(--aquamarine_color);
   border-radius: 10px;
   border-start-end-radius: var(--dark_green_color);
   border-end-start-radius: var(--aquamarine_color);
   margin-top: 4vh;
-  margin-left: 70px;
-  margin-right: 70px;
+  margin-left: 10vh;
+  margin-right: 10vh;
   height: 2.5vh;
   align-items: center;
+  justify-content: center;
   box-shadow: 2px 1px 3px 4px rgba(0, 36, 27, 1);
 }
 
@@ -197,6 +197,20 @@ footer {
   display: flex;
   position: relative;
   font-size: 8px;
-  margin-top: 3vh;
+  margin-top: 4vh;
   justify-content: center;
+}
+
+.footer1 {
+  margin-top: 2vh;
+}
+
+.footer2 {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.footer3 {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
