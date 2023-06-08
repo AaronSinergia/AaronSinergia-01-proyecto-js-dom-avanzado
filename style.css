@@ -197,20 +197,6 @@ footer {
   display: flex;
   position: relative;
   font-size: 8px;
-  margin-top: 4vh;
+  margin-top: 2vh;
   justify-content: center;
-}
-
-.footer1 {
-  margin-top: 2vh;
-}
-
-.footer2 {
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-}
-
-.footer3 {
-  margin-top: 2vh;
-  margin-bottom: 2vh;
 }

@@ -22,11 +22,13 @@
   grid-gap: 2vh;
   max-width: 100%;
   padding: 0 35px;
-  margin-top: 20vh;
+  margin-top: 17vh;
+  margin-bottom: 8vh;
 }
 
 .column img {
-  margin-top: 8px;
+  margin-top: 15px;
+  margin-bottom: 10px;
   vertical-align: middle;
   width: 100%;
   filter: sepia(80%);
@@ -116,6 +118,14 @@
 .next {
   right: 0px;
   /* pointer-events: none; */
+}
+
+.github {
+  margin-top: 2vh;
+}
+
+.linkedin {
+  margin-top: 2vh;
 }
 
 /*poner un hover indicando al pasar por las imagenes + info o algo así */
