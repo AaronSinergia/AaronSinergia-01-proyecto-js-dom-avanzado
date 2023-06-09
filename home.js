@@ -1,4 +1,5 @@
 import './style.css';
+import './experience_style.css';
 import { renderNavbar } from './navbar.js';
 
 // BODY HOME DATA BOX 1
@@ -106,20 +107,133 @@ const renderFooter = () => {
   document.body.appendChild(createFooter);
 };
 
-// HEAD HOME
-const headHome = () => {
+// // RENDER HOME
+// const renderHome = () => {
+//   const bodyOfHtml = document.querySelector('body');
+//   const h1 = document.createElement('h1');
+//   h1.className = 'title_name';
+//   h1.textContent = '.../AARON_CARRASCO';
+//   bodyOfHtml.appendChild(h1);
+//   renderNavbar();
+//   bodyHomeData();
+//   bodyHomeCurly();
+//   bodyHomeData2();
+//   mailContact();
+//   renderRRSSIcons();
+//   renderFooter();
+//   document.body.appendChild(bodyOfHtml);
+// };
+// renderHome();
+
+// OVERLAY EFFECT
+const overlayPhoto = () => {
+  const createOverlay = document.createElement('div');
+  createOverlay.className = 'overlay hidden';
+  const createSlideshow = document.createElement('div');
+  createSlideshow.className = 'slideshow';
+  const createCloseButton = document.createElement('span');
+  createCloseButton.className = 'btn_close';
+  createCloseButton.textContent = 'X';
+  const prevButton = document.createElement('div');
+  const createLeftButton = document.createElement('button');
+  prevButton.className = 'button prev';
+  createLeftButton.textContent = '{';
+  const nextButton = document.createElement('div');
+  const createRigthButton = document.createElement('button');
+  nextButton.className = 'button next';
+  createRigthButton.textContent = '}';
+  const imgSlideShow = document.createElement('img');
+  imgSlideShow.src = '';
+  imgSlideShow.alt = '';
+  imgSlideShow.id = 'img_slideshow';
+  createSlideshow.appendChild(imgSlideShow);
+  nextButton.appendChild(createRigthButton);
+  createSlideshow.appendChild(nextButton);
+  prevButton.appendChild(createLeftButton);
+  createSlideshow.appendChild(prevButton);
+  createSlideshow.appendChild(createCloseButton);
+  createOverlay.appendChild(createSlideshow);
+  document.body.appendChild(createOverlay);
+};
+
+// GALLERY EXPERIENCE IMAGES
+const workGallery = () => {
+  const sectionGallery = document.createElement('section');
+  sectionGallery.className = 'gallery';
+  const divGalleryColumn = document.createElement('div');
+  divGalleryColumn.className = 'column';
+  const rnovaImg = document.createElement('img');
+  rnovaImg.className = 'rnovaimg';
+  rnovaImg.src = './img/rnova-sll_li1.png';
+  rnovaImg.alt = 'rnova_logo';
+  rnovaImg.dataset.imgShow = '0';
+  const emergiaImg = document.createElement('img');
+  emergiaImg.src = './img/emergia.jpg';
+  emergiaImg.alt = 'emergia_logo';
+  emergiaImg.dataset.imgShow = '1';
+  const vodafoneImg = document.createElement('img');
+  vodafoneImg.src = './img/vodafone.png';
+  vodafoneImg.alt = 'vodafone_logo';
+  vodafoneImg.dataset.imgShow = '2';
+  const argomImg = document.createElement('img');
+  argomImg.src = './img/argom.jpeg';
+  argomImg.alt = 'argom_logo';
+  argomImg.dataset.imgShow = '3';
+  const dxcImg = document.createElement('img');
+  dxcImg.src = './img/dxc.png';
+  dxcImg.alt = 'dxc_logo';
+  dxcImg.dataset.imgShow = '4';
+  divGalleryColumn.appendChild(rnovaImg);
+  divGalleryColumn.appendChild(emergiaImg);
+  divGalleryColumn.appendChild(vodafoneImg);
+  divGalleryColumn.appendChild(argomImg);
+  divGalleryColumn.appendChild(dxcImg);
+  sectionGallery.appendChild(divGalleryColumn);
+  document.body.appendChild(sectionGallery);
+};
+
+// RENDER EXPERIENCE
+const renderExperience = () => {
   const bodyOfHtml = document.querySelector('body');
   const h1 = document.createElement('h1');
   h1.className = 'title_name';
-  h1.textContent = '.../AARON_CARRASCO';
+  h1.textContent = '.../Experiencia';
   bodyOfHtml.appendChild(h1);
   renderNavbar();
-  bodyHomeData();
-  bodyHomeCurly();
-  bodyHomeData2();
+  overlayPhoto();
+  workGallery();
   mailContact();
   renderRRSSIcons();
   renderFooter();
   document.body.appendChild(bodyOfHtml);
 };
-headHome();
+renderExperience();
+
+// Abrir imagen clicada con overlay
+const clickImageListener = (ev) => {
+  const overlay = document.querySelector('.overlay');
+  const createImgInfo = document.createElement('h2');
+  createImgInfo.className = 'img_exp_text';
+  createImgInfo.textContent = 'Hola'; /// añadir texto
+  document.body.appendChild(createImgInfo);
+  const imgSlideshow = document.querySelector('#img_slideshow');
+  const clickedImage = ev.target;
+  const imageSource = clickedImage.getAttribute('src');
+  imgSlideshow.setAttribute('src', imageSource);
+  overlay.classList.remove('hidden');
+};
+
+// Evento de click para cada imagen, y cargo el evento de que hacer arriba
+const images = document.querySelectorAll('img');
+images.forEach((image) => {
+  image.addEventListener('click', clickImageListener);
+});
+
+// Cerrar ventana overlay e imagen
+const clickCloseListener = () => {
+  const overlay = document.querySelector('.overlay');
+  overlay.classList.add('hidden');
+};
+
+const closeButton = document.querySelector('.btn_close');
+closeButton.addEventListener('click', clickCloseListener);

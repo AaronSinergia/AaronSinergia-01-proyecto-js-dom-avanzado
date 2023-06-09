@@ -1,5 +1,5 @@
 // NAVBAR
-const renderNavbar = () => {
+export const renderNavbar = () => {
   const divNavBar = document.createElement('div');
   const navHome = document.createElement('a');
   divNavBar.className = 'navbar';
