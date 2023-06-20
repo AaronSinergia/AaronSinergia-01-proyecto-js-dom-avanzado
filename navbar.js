@@ -1,7 +1,3 @@
-// import { renderHome } from './home.js';
-// import { renderProjects } from './projects.js';
-// import { renderExperience } from './experience.js';
-
 // NAVBAR
 export const renderNavbar = () => {
   // Create nav elements in html
@@ -27,20 +23,34 @@ export const renderNavbar = () => {
   divNavBar.appendChild(navExperience);
   divNavBar.appendChild(navProjects);
   document.body.appendChild(divNavBar);
-
-  // Click listener event in navbar
-  const clickListener = (ev) => {
-    // ev.preventDefault();
-    const hrefSelect = ev.target.getAttribute('href');
-    if (hrefSelect === '/projects') {
-      renderProjects();
-    } else if (hrefSelect === '/experience') {
-      renderExperience();
-    } else if (hrefSelect === '/home') {
-      renderHome();
-    }
-  };
-
-  const bodySelector = document.querySelector('body');
-  bodySelector.addEventListener('click', clickListener);
 };
+
+// // Click listener event in navbar
+// const clickListener = (ev) => {
+//   ev.preventDefault();
+
+//   const hrefSelect = ev.target.getAttribute('href');
+//   if (hrefSelect === navProjects) {
+//     renderProjects();
+//   } else if (hrefSelect === navExperience) {
+//     renderExperience();
+//   } else if (hrefSelect === navHome) {
+//     renderHome();
+//   }
+// };
+
+// // Agrega el evento de clic a los enlaces de la navbar
+// navHome.addEventListener('click', clickListener);
+// navExperience.addEventListener('click', clickListener);
+// navProjects.addEventListener('click', clickListener);
+
+const printProjects = (event) => {
+  event.preventDefault();
+  const linkHref = event.target.href;
+
+  main.innerHTML = ' ';
+  renderProjects();
+};
+
+const projectsFinal = document.querySelector('.finalProjects');
+projectsFinal.addEventListener('click', printProjects);

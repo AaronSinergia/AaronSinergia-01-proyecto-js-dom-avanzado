@@ -1,4 +1,4 @@
-import { renderNavbar } from './navbar.js';
+import { renderNavbar } from '../navbar.js';
 
 // // HEAD PROJECTS
 // const headProjects = () => {

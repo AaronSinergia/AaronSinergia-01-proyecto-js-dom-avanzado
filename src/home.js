@@ -1,6 +1,44 @@
 import './style.css';
-import './experience_style.css';
-import { renderNavbar } from './navbar.js';
+import { renderExperience } from './experience';
+
+// NAVBAR
+export const renderNavbar = () => {
+  // Create nav elements in html
+  const divNavBar = document.createElement('div');
+  const navHome = document.createElement('a');
+  const navExperience = document.createElement('a');
+  const navProjects = document.createElement('a');
+
+  // Asign nav classes to elements in html
+  divNavBar.className = 'navbar';
+  navHome.className = 'principal_links_bar';
+  navHome.href = '/home';
+  navHome.textContent = './Página_Principal';
+  navExperience.className = 'principal_links_bar experience_link';
+  navExperience.href = './experience.js';
+  navExperience.textContent = './Experiencia';
+  navProjects.className = 'principal_links_bar';
+  navProjects.href = '/projects';
+  navProjects.textContent = './Proyectos_en_Producción';
+
+  // Visible elements in html
+  divNavBar.appendChild(navHome);
+  divNavBar.appendChild(navExperience);
+  divNavBar.appendChild(navProjects);
+  document.body.appendChild(divNavBar);
+
+  // Link a distintas secciones addEventListener
+  const printProjects = (event) => {
+    event.preventDefault();
+    const linkHref = event.target.href;
+
+    main.innerHTML = ' ';
+    renderExperience();
+  };
+
+  const projectsFinal = document.querySelector('.experience_link');
+  projectsFinal.addEventListener('click', printProjects);
+};
 
 // BODY HOME DATA BOX 1
 const bodyHomeData = () => {
@@ -122,4 +160,5 @@ export const renderHome = () => {
   renderRRSSIcons();
   renderFooter();
 };
+
 renderHome();

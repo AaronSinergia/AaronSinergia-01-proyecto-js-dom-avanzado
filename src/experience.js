@@ -1,6 +1,5 @@
 import './style.css';
 import './experience_style.css';
-import { renderNavbar } from './navbar.js';
 
 // EMAIL
 const mailContact = () => {
@@ -137,7 +136,7 @@ export const renderExperience = () => {
   renderRRSSIcons();
   renderFooter();
 };
-renderExperience();
+// renderExperience();
 
 // Abrir imagen clicada con overlay
 const clickImageListener = (ev) => {
