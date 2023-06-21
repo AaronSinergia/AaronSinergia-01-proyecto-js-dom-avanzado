@@ -1,5 +1,3 @@
-import { renderNavbar } from '../navbar.js';
-
 // // HEAD PROJECTS
 // const headProjects = () => {
 //   const bodyOfHtml = document.querySelector('body');

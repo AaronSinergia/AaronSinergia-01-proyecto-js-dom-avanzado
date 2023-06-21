@@ -1,6 +1,3 @@
-import './style.css';
-import './experience_style.css';
-
 // EMAIL
 const mailContact = () => {
   const h3Mail = document.createElement('h3');
